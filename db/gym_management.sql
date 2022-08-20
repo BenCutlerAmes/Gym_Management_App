@@ -18,7 +18,7 @@ CREATE TABLE clients (
 CREATE TABLE lessons(
     id SERIAL PRIMARY KEY,
     activity VARCHAR(255),
-    duration TIME,
+    duration INT,
     lesson_date DATE,
     lesson_time TIME,
     instructor_id INT REFERENCES instructors(id)
