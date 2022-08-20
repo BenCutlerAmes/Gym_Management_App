@@ -1,4 +1,4 @@
-class Lessons:
+class Lesson:
     def __init__(self, activity, duration, lesson_date, lesson_time, instructor):
         self.activity = activity
         self.duration = duration
