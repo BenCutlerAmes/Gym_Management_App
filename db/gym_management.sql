@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS lesson_bookings;
 DROP TABLE IF EXISTS lessons;
 DROP TABLE IF EXISTS clients;
 DROP TABLE IF EXISTS instructors;
@@ -22,4 +23,10 @@ CREATE TABLE lessons(
     lesson_date DATE,
     lesson_time TIME,
     instructor_id INT REFERENCES instructors(id)
+);
+
+CREATE TABLE lesson_bookings(
+    id serial PRIMARY KEY,
+    client_id INT REFERENCES clients(id),
+    lesson_id INT REFERENCES lessons(id)
 );

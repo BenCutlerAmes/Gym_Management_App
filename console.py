@@ -1,11 +1,20 @@
 from models.client import Client
 import repositories.client_repository as client_repo
+
 from models.instructors import Instructor
 import repositories.instructor_repository as instructor_repo
+
 from models.lessons import Lesson
 import repositories.lesson_repository as lesson_repo
 
+from models.lesson_bookings import Lesson_Booking
+import repositories.lesson_booking_repository as lesson_booking_repo
+
 client_repo.delete_all()
+instructor_repo.delete_all()
+lesson_repo.delete_all()
+# lesson_booking_repo.delete_all()
+
 
 client1 = Client("Kyle","1993-09-14","kyleiscool@gmail.com")
 client_repo.add_client(client1)
@@ -31,3 +40,12 @@ lesson_repo.add_lesson(lesson2)
 
 lesson3 = Lesson("GetSwolFast",90,"2022-08-28","13:00",instructor2)
 lesson_repo.add_lesson(lesson3)
+
+booking1 = Lesson_Booking(client1, lesson1)
+lesson_booking_repo.add_booking(booking1)
+
+booking2 = Lesson_Booking(client2, lesson1)
+lesson_booking_repo.add_booking(booking2)
+
+booking3 = Lesson_Booking(client1,lesson3)
+lesson_booking_repo.add_booking(booking3)

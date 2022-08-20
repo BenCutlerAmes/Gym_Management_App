@@ -24,7 +24,7 @@ def select(id):
     results = run_sql(sql,values)
     if results:
         result = results[0]
-        instructor = instructor(result['name'],result['email_address'],result['id'])
+        instructor = Instructor(result['name'],result['email_address'],result['id'])
     return instructor
 
 def delete_all():

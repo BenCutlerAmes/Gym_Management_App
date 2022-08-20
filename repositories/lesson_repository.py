@@ -15,7 +15,7 @@ def select_all():
     sql = "SELECT * FROM lessons"
     results = run_sql(sql)
     for result in results:
-        lesson = Lesson(result.activity, result.duration, result.lesson_date, result.lesson_time, result.instructor_id,result.id)
+        lesson = Lesson(result['activity'], result['duration'], result['lesson_date'], result['lesson_time'], result['instructor_id'],result['id'])
         lesson.append(lesson)
     return lesson_list
 
@@ -24,9 +24,9 @@ def select(id):
     sql = "SELECT * FROM lessons WHERE id = %s"
     values = [id]
     results = run_sql(sql,values)
-    if results:
+    if results != None:
         result = results[0]
-        lesson = Lesson(result.activity, result.duration, result.lesson_date, result.lesson_time, result.instructor_id,result.id)
+        lesson = Lesson(result['activity'], result['duration'], result['lesson_date'], result['lesson_time'], result['instructor_id'],result['id'])
     return lesson
 
 def delete_all():
