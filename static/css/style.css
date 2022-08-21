@@ -98,18 +98,20 @@ header a {
     list-style: none;
 }
 
-#subheader_nav ul li a {
+#subheader_nav ul li a{
     position: relative;
     font-size: 1.5em;
+    font-weight: 400;
     text-decoration: none;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: transparent;
-    text-shadow:0 0 0 lightgrey;
-    transition: ease-in-out 0.5;
+    text-shadow:0 0 0 lightgray;
+    transition-duration: 0.5s;
 }
 
 #subheader_nav ul li a:hover {
-    text-shadow:0 0 0 #ffffff, 0 0 4px #ffffff;
-    color: gold;
+    color: white;
+    font-size:2em;
+
 }
