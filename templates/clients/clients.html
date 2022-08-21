@@ -1,26 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
-<h2> Search by client name </h2>
-<form action="/clients/search/" method="POST">
+
+<div class=searches>
     <div>
-        <label for="search term"></label>
-        <input type="text" id="search term" name ="term">
-        <input type="submit">
+        <h2> Search by client name </h2>
+        <form action="/clients/searchname/" method="POST">
+            <div>
+                <label for="search term"></label>
+                <input type="text" id="search term" name="term">
+                <input type="submit">
+            </div>
+        </form>
     </div>
-</form>
+    <div>
+        <h2> Search by email address:</h2>
+        <form action="/clients/searchemail/" method="POST">
+            <div>
+                <label for="search term"></label>
+                <input type="text" id="search term" name="term">
+                <input type="submit">
+            </div>
+        </form>
+    </div>
 
+</div>
 
+<div id="client_container">
 {% for client in clients %}
 <div class="client_list">
-    <a href="/clients/{{client.id}}">
-        <div class="individual_client">
-            <h3> Name: {{client.name}}</h3>
+    <div class="individual_client">
+        <a href="/clients/{{client.id}}">
+            <h3>{{client.name}}</h3>
             <p>Date of Birth: {{client.date_of_birth}} <br>
                 Email Address: {{client.email_address}}
             </p>
-        </div>
-    </a>
+        </a>
+
+    </div>
+
 </div>
 {% endfor %}
+</div>
 
 {% endblock %}

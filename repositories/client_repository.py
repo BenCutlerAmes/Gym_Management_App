@@ -12,7 +12,7 @@ def add_client(client):
 
 def select_all():
     client_list = []
-    sql = "SELECT * FROM clients"
+    sql = "SELECT * FROM clients ORDER BY name"
     results = run_sql(sql)
     for result in results:
         client = Client(result['name'],result['date_of_birth'],result['email_address'],result['id'])
@@ -63,6 +63,16 @@ def booked_lessons(client):
 def search_by_name(name):
     client_list = []
     sql = "SELECT * FROM clients where UPPER(name) like UPPER(%s)"
+    values = ['%'+name+'%']
+    results = run_sql(sql,values)
+    for result in results:
+        client = Client(result['name'],result['date_of_birth'],result['email_address'],result['id'])
+        client_list.append(client)
+    return client_list
+
+def search_by_email(name):
+    client_list = []
+    sql = "SELECT * FROM clients where UPPER(email_address) like UPPER(%s)"
     values = ['%'+name+'%']
     results = run_sql(sql,values)
     for result in results:
