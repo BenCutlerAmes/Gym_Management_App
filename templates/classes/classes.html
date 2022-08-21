@@ -1,1 +1,15 @@
-THIS IS A PLACEHOLDER
+{% extends "base.html" %}
+{% block content %}
+
+<h2> Classes</h2>
+
+{% for lesson in classes %} 
+<h4> {{lesson.activity}}</h4>
+<p> {{lesson.lesson_date}} <br>
+    {{lesson.lesson_time}} <br>
+    {{lesson.duration}} <br>
+    </p>
+    <hr>
+{% endfor %} 
+
+{% endblock %} 
