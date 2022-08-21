@@ -21,3 +21,16 @@ def search_by_name():
     term = request.form['term']
     clients = client_repo.search_by_name(term)
     return render_template("/clients/clients.html", clients = clients)
+
+@clients_blueprint.route("/clients/new")
+def new_client_form():
+    return render_template("/clients/new.html")
+
+@clients_blueprint.route("/clients", methods = ['POST'])
+def add_new_client():
+    name = request.form['name']
+    date_of_birth = request.form['date_of_birth']
+    email_address = request.form['email_address']
+    client = Client(name, date_of_birth,email_address)
+    client_repo.add_client(client)
+    return redirect("/clients")
