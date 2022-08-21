@@ -102,10 +102,14 @@ header a {
     position: relative;
     font-size: 1.5em;
     text-decoration: none;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: white;
-    text-shadow:0 0 0 #1d3557. 0 0 4px white;
-    
+    color: transparent;
+    text-shadow:0 0 0 lightgrey;
+    transition: ease-in-out 0.5;
+}
 
+#subheader_nav ul li a:hover {
+    text-shadow:0 0 0 #ffffff, 0 0 4px #ffffff;
+    color: white;
 }
