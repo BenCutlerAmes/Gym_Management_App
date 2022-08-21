@@ -15,3 +15,9 @@ def show_one_client(id):
     client = client_repo.select(id)
     lessons = client_repo.booked_lessons(client)
     return render_template("clients/show.html",client = client,lessons = lessons)
+
+@clients_blueprint.route("/clients/search/", methods=['POST'])
+def search_by_name():
+    term = request.form['term']
+    clients = client_repo.search_by_name(term)
+    return render_template("/clients/clients.html", clients = clients)

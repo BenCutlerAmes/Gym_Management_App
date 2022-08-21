@@ -60,3 +60,13 @@ def booked_lessons(client):
         lessons.append(lesson)
     return lessons
 
+def search_by_name(name):
+    client_list = []
+    sql = "SELECT * FROM clients where UPPER(name) like UPPER(%s)"
+    values = ['%'+name+'%']
+    results = run_sql(sql,values)
+    for result in results:
+        client = Client(result['name'],result['date_of_birth'],result['email_address'],result['id'])
+        client_list.append(client)
+    return client_list
+
