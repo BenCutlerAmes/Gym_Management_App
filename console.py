@@ -32,13 +32,13 @@ instructor_repo.add_instructor(instructor1)
 instructor2 = Instructor("Meera","smallbutmighty@gmail.com")
 instructor_repo.add_instructor(instructor2)
 
-lesson1 = Lesson("Zumba",45,"2022-08-27","12:30",instructor1)
+lesson1 = Lesson("Zumba",45,"2022-08-27","12:30",instructor1,20)
 lesson_repo.add_lesson(lesson1)
 
-lesson2 = Lesson("Bodypump",30,"2022-08-27","14:00", instructor1)
+lesson2 = Lesson("Bodypump",30,"2022-08-27","14:00", instructor1,20)
 lesson_repo.add_lesson(lesson2)
 
-lesson3 = Lesson("GetSwolFast",90,"2022-08-28","13:00",instructor2)
+lesson3 = Lesson("GetSwolFast",90,"2022-08-28","13:00",instructor2,20)
 lesson_repo.add_lesson(lesson3)
 
 booking1 = Lesson_Booking(client1, lesson1)
@@ -49,3 +49,4 @@ lesson_booking_repo.add_booking(booking2)
 
 booking3 = Lesson_Booking(client1,lesson3)
 lesson_booking_repo.add_booking(booking3)
+

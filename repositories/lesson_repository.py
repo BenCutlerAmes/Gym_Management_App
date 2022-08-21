@@ -4,8 +4,8 @@ from models.client import Client
 from models.instructors import Instructor
 
 def add_lesson(lesson):
-    sql = "INSERT INTO lessons (activity, duration, lesson_date, lesson_time, instructor_id) VALUES (%s,%s,%s,%s,%s) RETURNING id"
-    values = [lesson.activity, lesson.duration, lesson.lesson_date, lesson.lesson_time, lesson.instructor.id]
+    sql = "INSERT INTO lessons (activity, duration, lesson_date, lesson_time, instructor_id, capacity) VALUES (%s,%s,%s,%s,%s,%s) RETURNING id"
+    values = [lesson.activity, lesson.duration, lesson.lesson_date, lesson.lesson_time, lesson.instructor.id, lesson.capacity]
     results = run_sql(sql,values)
     id = results[0]['id']
     lesson.id = id
@@ -15,7 +15,7 @@ def select_all():
     sql = "SELECT * FROM lessons"
     results = run_sql(sql)
     for result in results:
-        lesson = Lesson(result['activity'], result['duration'], result['lesson_date'], result['lesson_time'], result['instructor_id'],result['id'])
+        lesson = Lesson(result['activity'], result['duration'], result['lesson_date'], result['lesson_time'], result['instructor_id'],result['capacity'],result['id'])
         lesson.append(lesson)
     return lesson_list
 
@@ -26,7 +26,7 @@ def select(id):
     results = run_sql(sql,values)
     if results != None:
         result = results[0]
-        lesson = Lesson(result['activity'], result['duration'], result['lesson_date'], result['lesson_time'], result['instructor_id'],result['id'])
+        lesson = Lesson(result['activity'], result['duration'], result['lesson_date'], result['lesson_time'], result['instructor_id'],result['capacity'],result['id'])
     return lesson
 
 def delete_all():
@@ -42,5 +42,5 @@ def delete(id):
 
 def update(lesson):
     sql = "UPDATE lessons SET (activity, duration, lesson_date, lesson_time, instructor) = (%s,%s,%s,%s,%s) WHERE id = %s"
-    values = [lesson.activity, lesson.duration, lesson.lesson_date, lesson.lesson_time, lesson.instructor_id,lesson.id]
+    values = [lesson.activity, lesson.duration, lesson.lesson_date, lesson.lesson_time, lesson.instructor_id,lesson.capacity,lesson.id]
     run_sql(sql, values)

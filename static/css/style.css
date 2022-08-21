@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Oswald, Roboto;
+}
+
+.menu_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1d3557;
+}
+
+ul{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+ul li{
+    position: relative;
+    list-style: none;
+}
+
+ul li a {
+    position: relative;
+    font-size: 5em;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: transparent;
+    text-shadow: 0 0 0 #1d3557, 0 0  4px white;
+}
+
+ul li a::before{
+    content: attr(data-text);
+    position:absolute;
+    color: white;
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    border-right: 8px solid white;
+
+}
+
+ul li a:hover::before{
+    width: 100%;
+    filter: drop-shadow(0 0 25px white);
+
+}

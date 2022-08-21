@@ -22,6 +22,7 @@ CREATE TABLE lessons(
     duration INT,
     lesson_date DATE,
     lesson_time TIME,
+    capacity INT,
     instructor_id INT REFERENCES instructors(id)
 );
 

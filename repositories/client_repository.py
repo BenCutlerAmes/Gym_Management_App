@@ -43,3 +43,4 @@ def update(client):
     values = [client.name,client.date_of_birth,client.email_address,client.id]
     run_sql(sql, values)
 
+

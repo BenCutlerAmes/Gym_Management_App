@@ -1,0 +1,16 @@
+{% extends "base.html" %} 
+{% block content %} 
+
+{% for client in clients %} 
+<div class="client_list">
+    <div class="individual_client">
+        <h3> Name: {{client.name}}</h3>
+        <p>Date of Birth: {{client.date_of_bith}} <br>
+        Email Address: {{client.email_address}}
+        </p>
+        <hr>
+    </div>
+</div>
+{% endfor %} 
+
+{% endblock %}
