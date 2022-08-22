@@ -8,7 +8,14 @@ body{
     background: rgb(255,255,255);
     background: linear-gradient(180deg, rgba(255,255,255,1) 38%, rgba(29,53,87,1) 91%); 
     background-attachment: fixed;
-}   
+}
+
+#front_page_header{
+    color: white;
+    font-size: 4em;
+    padding-left: 1em;
+    padding-top: 0.5em;
+}
 
 header {
     background-color: #1d3557;
@@ -49,6 +56,8 @@ header a {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    padding-bottom: 400px;
+
 
 }
 
