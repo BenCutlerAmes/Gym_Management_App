@@ -42,7 +42,7 @@ def add_new_client():
     client_repo.add_client(client)
     return redirect("/clients")
 
-@clients_blueprint.route("/clients/classes/<id>")
-def lesson_booking_form(id):
+@clients_blueprint.route("/clients/classes/<client_id>")
+def lesson_booking_form(client_id):
     classes = lesson_repo.select_all()
-    return render_template("/classes/class_booking.html",client_id = id,classes = classes)
+    return render_template("/classes/class_booking.html",client_id = client_id,classes = classes)

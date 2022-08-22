@@ -2,6 +2,7 @@ from flask import Flask, render_template
 
 from controllers.client_controller import clients_blueprint
 from controllers.classes_controller import classes_blueprint
+from controllers.booking_controller import booking_blueprint
 
 app = Flask(__name__)
 
@@ -11,6 +12,7 @@ def main():
     
 app.register_blueprint(clients_blueprint)
 app.register_blueprint(classes_blueprint)
+app.register_blueprint(booking_blueprint)
 
 
 if __name__ == '__main__':

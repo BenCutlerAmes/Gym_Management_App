@@ -4,7 +4,7 @@
 <h2> Classes</h2>
 
 {% for lesson in classes %} 
-<a href="/booking/{{client_id}}/{{lesson.lesson_id}}">
+<a href="/bookings/{{client_id}}/{{lesson.id}}">
 <h4> {{lesson.activity}}</h4>
 <p> {{lesson.lesson_date}} <br>
     {{lesson.lesson_time}} <br>
