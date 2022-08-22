@@ -14,7 +14,7 @@ def select_all():
     results = run_sql(sql)
     for result in results:
         instructor = Instructor(result['name'],result['email_address'],result['id'])
-        instructor.append(instructor)
+        instructor_list.append(instructor)
     return instructor_list
 
 def select(id):

@@ -119,8 +119,9 @@ header a {
 main {
     padding: 1em;
     background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 38%, rgba(29,53,87,1) 91%); 
+    background: linear-gradient(180deg, rgba(255,255,255,1) 60%, rgba(29,53,87,1) 91%); 
     background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .searches {

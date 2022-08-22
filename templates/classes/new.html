@@ -3,14 +3,25 @@
 
 <h2>Schedule New Class</h2>
 
-<form action="/class" method="post">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br>
-    <label for="date_of_birth"> Date of Birth:</label>
-    <input type="date" id="date_of_birth" name="date_of_birth"><br>
-    <label for="email_address">Email Address</label>
-    <input type="email" id="email_address" name="email_address"><br>
+<form action="/classes" method="post">
+    <label for="activity">Activity:</label>
+    <input type="text" id="activity" name="activity"><br>
+    <label for="duration">Duration:</label>
+    <input type="number" id="duration" name="duration"><br>
+    <label for="lesson_date">Lesson Date</label>
+    <input type="date" id="lesson_date" name="lesson_date"><br>
+    <label for="lesson_time">Lesson Time</label>
+    <input type="time" id="lesson_time" name="lesson_time"><br>
+    <label for="capacity">Capacity</label>
+    <input type="number" id="capacity" name="capacity"><br>
+    <label for="instructor">Instructor:</label>
+    <select id="instructor" name="instructor_id">
+        {% for instructor in instructor_list %}
+        <option value="{{ instructor.id }}">{{ instructor.name }}</option>
+        {% endfor %}
+    </select>
     <input type="submit">
+
 </form>
 
 
