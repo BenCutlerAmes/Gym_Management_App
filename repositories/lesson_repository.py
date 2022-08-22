@@ -41,9 +41,12 @@ def delete(id):
 
 
 def update(lesson):
-    sql = "UPDATE lessons SET (activity, duration, lesson_date, lesson_time, capacity, instructor) = (%s,%s,%s,%s,%s,%s) WHERE id = %s"
-    values = [lesson.activity, lesson.duration, lesson.lesson_date, lesson.lesson_time, lesson.capacity,lesson.instructor,lesson.id]
+    sql = "UPDATE lessons SET (activity, duration, lesson_date, lesson_time, instructor_id, capacity) = (%s,%s,%s,%s,%s,%s) WHERE id = %s"
+    print(lesson.__dict__)
+    print(lesson.instructor.__dict__)
+    values = [lesson.activity, lesson.duration, lesson.lesson_date, lesson.lesson_time, lesson.instructor.id, lesson.capacity,lesson.id]
     run_sql(sql, values)
+    
 
 def booked_clients(lesson):
     clients=[]
