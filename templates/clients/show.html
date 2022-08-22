@@ -14,10 +14,13 @@
     <div>
         <a href="{{client.id}}/update"><button>Update details</button></a>
     </div>
-    <form class="delete-form" action="/clients/{{client.id}}/delete" method="post">
+    <!-- <form class="delete-form" action="/clients/{{client.id}}/delete" method="post">
 
-        <button>delete</button>
-    </form>
+        <button class = delete_button>Delete Client</button>
+    </form> -->
+    <div class = delete_button>
+        <a  href="/clients/{{client.id}}/delete"><button class = delete_button>Delete Client</button></a>
+    </div>
     
     </form>
 </div>

@@ -25,21 +25,19 @@
 
 </div>
 
-<div id="client_container">
-{% for client in clients %}
-<div class="client_list">
-    <div class="individual_client">
-        <a href="/clients/{{client.id}}">
-            <h3>{{client.name}}</h3>
-            <p>Date of Birth: {{client.date_of_birth}} <br>
-                Email Address: {{client.email_address}}
-            </p>
-        </a>
-
+<div class="client_container">
+    {% for client in clients %}
+    <div class="client_list">
+        <div class="individual_client">
+            <a href="/clients/{{client.id}}">
+                <h3>{{client.name}}</h3>
+                <p>Date of Birth: {{client.date_of_birth}} <br>
+                    Email Address: {{client.email_address}}
+                </p>
+            </a>
+        </div>
     </div>
-
-</div>
-{% endfor %}
+    {% endfor %}
 </div>
 
 {% endblock %}

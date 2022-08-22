@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class=warning>
+<h2 >ARE YOU SURE THAT YOU WISH TO DELETE?</h2>
+<h3>Press the button to confirm</h3>
+<div >
+    <form class="delete-form" action="/clients/{{client_id}}/delete" method="post">
+
+        <button class = delete_client_button>Confirm Delete</button>
+    </form>
+
+{% endblock %} 
+

@@ -139,7 +139,7 @@ main {
     padding-right:3em;
 }
 
-#client_container{
+.client_container{
     display: flex;
     grid-template-columns: 1fr 1fr;
     flex-wrap: wrap;
@@ -172,6 +172,9 @@ main {
 .individual_client a h3{
     text-align: left;
 }
+.individual_client a h4{
+    text-align: left;
+}
 
 .subheader {
     display: flex;
@@ -190,4 +193,25 @@ main {
     background-color: red;
     color: black;
     font-weight: bold;
+    height: 5em;
+    width: 12em;
+    border-radius: 14px;
+}
+
+.delete_client_button{
+    background-color: red;
+    color: black;
+    font-weight: bold;
+    height: 7em;
+    width: 15em;
+    border-radius: 14px;
+    font-size: xx-large;
+}
+
+.warning {
+    font-size: xx-large;
+    width:100%;
+    text-align: center;
+    padding-left:auto;
+    padding-right: auto;
 }

@@ -1,3 +1,5 @@
+from datetime import datetime,timedelta
+
 from models.client import Client
 import repositories.client_repository as client_repo
 
@@ -134,25 +136,66 @@ instructor_repo.add_instructor(instructor2)
 instructor3 = Instructor("John","john@thefitnessfactory.com")
 instructor_repo.add_instructor(instructor3)
 instructor4 = Instructor("Stuart","stuart@thefitnessfactory.com")
-instructor_repo.add_instructor(instructor3)
-instructor3 = Instructor("eric","eric@thefitnessfactory.com")
-instructor_repo.add_instructor(instructor3)
+instructor_repo.add_instructor(instructor4)
+instructor5 = Instructor("eric","eric@thefitnessfactory.com")
+instructor_repo.add_instructor(instructor5)
 
-lesson1 = Lesson("Zumba",60,"2022-08-27","12:30",instructor1,20)
-lesson_repo.add_lesson(lesson1)
+lesson1 = Lesson("Zumba",60,"2022-08-27","13:00",instructor1,20)
+i=0
+while i < 52:
+    lesson_repo.add_lesson(lesson1)
+    old = datetime.fromisoformat(str(lesson1.lesson_date))
+    new = old + timedelta(7)
+    lesson1.lesson_date = new
+    i+=1
+        
 
-lesson2 = Lesson("Bodypump",60,"2022-08-27","14:00", instructor1,20)
-lesson_repo.add_lesson(lesson2)
+lesson1 = Lesson("Bodypump",60,"2022-08-28","14:00", instructor1,20)
+i=0
+while i < 52:
+    lesson_repo.add_lesson(lesson1)
+    old = datetime.fromisoformat(str(lesson1.lesson_date))
+    new = old + timedelta(7)
+    lesson1.lesson_date = new
+    i+=1
 
-lesson3 = Lesson("GetSwolFast",60,"2022-08-28","13:00",instructor2,20)
-lesson_repo.add_lesson(lesson3)
+lesson1 = Lesson("GetSwolFast",60,"2022-08-28","13:00",instructor3,10)
+i=0
+while i < 52:
+    lesson_repo.add_lesson(lesson1)
+    old = datetime.fromisoformat(str(lesson1.lesson_date))
+    new = old + timedelta(7)
+    lesson1.lesson_date = new
+    i+=1
 
-booking1 = Lesson_Booking(client1, lesson1)
-lesson_booking_repo.add_booking(booking1)
+lesson1 = Lesson("Swimming",60,"2022-08-28","13:00",instructor5,10)
+i=0
+while i < 52:
+    lesson_repo.add_lesson(lesson1)
+    old = datetime.fromisoformat(str(lesson1.lesson_date))
+    new = old + timedelta(7)
+    lesson1.lesson_date = new
+    i+=1
 
-booking2 = Lesson_Booking(client2, lesson1)
-lesson_booking_repo.add_booking(booking2)
+lesson1 = Lesson("Cage Fighting",60,"2022-08-28","13:00",instructor4,4)
+i=0
+while i < 52:
+    lesson_repo.add_lesson(lesson1)
+    old = datetime.fromisoformat(str(lesson1.lesson_date))
+    new = old + timedelta(7)
+    lesson1.lesson_date = new
+    i+=1
 
-booking3 = Lesson_Booking(client1,lesson3)
-lesson_booking_repo.add_booking(booking3)
+lesson1 = Lesson("Boxercise",60,"2022-08-23","13:00",instructor2,10)
+i=0
+while i < 52:
+    lesson_repo.add_lesson(lesson1)
+    old = datetime.fromisoformat(str(lesson1.lesson_date))
+    new = old + timedelta(7)
+    lesson1.lesson_date = new
+    i+=1
+
+
+
+
 
