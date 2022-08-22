@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="single_form">
+    <h2>Add New User</h2>
 
-<h2>Add New User</h2>
-
-<form action="/clients" method="post">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br>
-    <label for="date_of_birth"> Date of Birth:</label>
-    <input type="date" id="date_of_birth" name="date_of_birth"><br>
-    <label for="email_address">Email Address</label>
-    <input type="email" id="email_address" name="email_address"><br>
-    <input type="submit">
-</form>
+    <form action="/clients" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="date_of_birth"> Date of Birth:</label>
+        <input type="date" id="date_of_birth" name="date_of_birth"><br>
+        <label for="email_address">Email Address</label>
+        <input type="email" id="email_address" name="email_address"><br>
+        <input type="submit">
+    </form>
+</div>
 
 
 {% endblock%}

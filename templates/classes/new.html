@@ -1,30 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="single_form">
+    <h2>Schedule New Class</h2>
 
-<h2>Schedule New Class</h2>
-
-<form action="/classes" method="post">
-    <label for="activity">Activity:</label>
-    <input type="text" id="activity" name="activity"><br>
-    <label for="duration">Duration:</label>
-    <input type="number" id="duration" name="duration"><br>
-    <label for="lesson_date">Lesson Date</label>
-    <input type="date" id="lesson_date" name="lesson_date"><br>
-    <label for="lesson_time">Lesson Time</label>
-    <input type="time" id="lesson_time" name="lesson_time"><br>
-    <label for="capacity">Capacity</label>
-    <input type="number" id="capacity" name="capacity"><br>
-    <label for="instructor">Instructor:</label>
-    <select id="instructor" name="instructor_id">
-        {% for instructor in instructor_list %}
-        <option value="{{ instructor.id }}">{{ instructor.name }}</option>
-        {% endfor %}
-    </select> <br>
-    <label for="weekly">Running every week?:</label>
-    <input type="checkbox" id="weekly" name="weekly"><br>
-    <input type="submit">
-
-</form>
-
+    <form action="/classes" method="post">
+        <label for="activity">Activity:</label>
+        <input type="text" id="activity" name="activity"><br>
+        <label for="duration">Duration:</label>
+        <input type="number" id="duration" name="duration"><br>
+        <label for="lesson_date">Lesson Date</label>
+        <input type="date" id="lesson_date" name="lesson_date"><br>
+        <label for="lesson_time">Lesson Time</label>
+        <input type="time" id="lesson_time" name="lesson_time"><br>
+        <label for="capacity">Capacity</label>
+        <input type="number" id="capacity" name="capacity"><br>
+        <label for="instructor">Instructor:</label>
+        <select id="instructor" name="instructor_id">
+            {% for instructor in instructor_list %}
+            <option value="{{ instructor.id }}">{{ instructor.name }}</option>
+            {% endfor %}
+        </select> <br>
+        <label for="weekly">Running every week?:</label>
+        <input type="checkbox" id="weekly" name="weekly"><br>
+        <input type="submit">
+    </form>
+</div>
 
 {% endblock%}
