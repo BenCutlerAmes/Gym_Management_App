@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="single_form">
+    <div class="form_box">
+    
     <h2>Please confirm booking</h2>
 
     <p> Client: {{client.name}} <br>
@@ -13,7 +15,7 @@
         <input type="hidden" name='lesson_id' value="{{lesson.id}}">
     </form>
 </div>
-
+</div>
 
 
 {%endblock%}

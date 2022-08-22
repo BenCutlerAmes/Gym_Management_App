@@ -156,7 +156,7 @@ main {
 }
 
 .individual_client {
-    border: 3px double #ccc;
+    border: 3px groove #ccc;
     width: 300px;
     min-height: 68px;
     padding: 20px;
@@ -223,10 +223,24 @@ main {
 }
 
 .single_form {
+display: flex;
+justify-content: center;
 width: 100%;
 height: 100%;
-padding-left: 10%;
 padding-top: 5%;
-font-size: larger;
 letter-spacing: 0.3em;
+font-size: larger;
+}
+
+.form_box{
+    padding: 1em;
+    border: groove;
+    background: white;
+    align-items: center;
+font-size:1.4em;
+
+}
+
+.form_box input{
+    font-size:1em
 }

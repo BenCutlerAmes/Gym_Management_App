@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="single_form">
+    <div class="form_box">
+
     <h2>Update User</h2>
 
     <form action="/clients/{{client.id}}/update" method="post">
@@ -13,5 +15,5 @@
         <input type="submit">
     </form>
 </div>
-
+</div>
 {% endblock%}
