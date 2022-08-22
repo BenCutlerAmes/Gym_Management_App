@@ -25,4 +25,4 @@ def create_booking():
     lesson = lesson_repo.select(lesson_id)
     booking = Lesson_Booking(client,lesson)
     booking_repo.add_booking(booking)
-    return redirect("/client")
+    return redirect("/clients")

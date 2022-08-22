@@ -61,3 +61,8 @@ def update_client(id):
     client = Client(name,date_of_birth,email_address,id)
     client_repo.update(client)
     return redirect('/clients')
+
+@clients_blueprint.route("/clients/<id>/delete", methods = ['POST'])
+def delete_client(id):
+    client_repo.delete(id)
+    return redirect('/clients')
