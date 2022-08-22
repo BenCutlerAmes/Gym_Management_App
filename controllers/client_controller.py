@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, request
 from flask import Blueprint
 from models.client import Client
 import repositories.client_repository as client_repo
+import repositories.lesson_repository as lesson_repo
 
 clients_blueprint = Blueprint("clients", __name__)
 
@@ -43,4 +44,5 @@ def add_new_client():
 
 @clients_blueprint.route("/clients/classes/<id>")
 def lesson_booking_form(id):
-    return render_template("/clients/booking_form.html")
+    classes = lesson_repo.select_all()
+    return render_template("/classes/class_booking.html",client_id = id,classes = classes)
