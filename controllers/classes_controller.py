@@ -41,3 +41,9 @@ def schedule_new_lesson():
 def schedule_lesson_form():
     instructor_list = instructor_repo.select_all()
     return render_template("/classes/new.html",instructor_list = instructor_list)
+
+@classes_blueprint.route("/classes/<id>")
+def show_one_lesson(id):
+    lesson = lesson_repo.select(id)
+    clients =lesson_repo.booked_clients(lesson)
+    return render_template('/classes/show.html', lesson = lesson, clients = clients)

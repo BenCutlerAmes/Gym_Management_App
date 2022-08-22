@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class=subheader>
+    <div class=subhead_left>
+    <h2>{{lesson.activity}}</h2>
+    <p>Date: {{lesson.lesson_date}} <br>
+        Time: {{lesson.lesson_time}}
+    </p>
+    </div>
+    <div class="subhead_right">
+    <a href=""><button>Book this class</button></a>
+    </div>
+</div>
+<br><hr><br>
+<div class = bookings>
+    <h3>Current bookings</h3>
+    <div class="individual_booking">
+        {% for client in clients %} 
+         <h4>{{client.name}}</h4>
+         <p> {{client.date_of_birth}}
+        </p><hr>
+        {% endfor %}
+    </div>
+
+{% endblock %} 

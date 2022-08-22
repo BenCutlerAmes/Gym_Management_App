@@ -44,3 +44,17 @@ def update(lesson):
     sql = "UPDATE lessons SET (activity, duration, lesson_date, lesson_time, instructor) = (%s,%s,%s,%s,%s) WHERE id = %s"
     values = [lesson.activity, lesson.duration, lesson.lesson_date, lesson.lesson_time, lesson.instructor_id,lesson.capacity,lesson.id]
     run_sql(sql, values)
+
+def booked_clients(lesson):
+    clients=[]
+    sql = """SELECT clients.* from clients
+    INNER JOIN lesson_bookings
+    on clients.id = lesson_bookings.client_id
+    WHERE lesson_id = %s
+    """
+    values = [lesson.id]
+    results = run_sql(sql,values)
+    for row in results:
+        client = Client(row['name'],row['date_of_birth'],row['email_address'],row['id'])
+        clients.append(client)
+    return clients

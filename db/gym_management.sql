@@ -28,6 +28,6 @@ CREATE TABLE lessons(
 
 CREATE TABLE lesson_bookings(
     id serial PRIMARY KEY,
-    client_id INT REFERENCES clients(id),
-    lesson_id INT REFERENCES lessons(id)
+    client_id INT REFERENCES clients(id) ON DELETE CASCADE,
+    lesson_id INT REFERENCES lessons(id) ON DELETE CASCADE
 );
