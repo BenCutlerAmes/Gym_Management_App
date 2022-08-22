@@ -50,7 +50,7 @@ header a {
 
 .menu_container ul li a {
     position: relative;
-    font-size: 5em;
+    font-size: 3em;
     font-weight: bold;
     text-decoration: none;
     letter-spacing: 2px;
@@ -118,6 +118,9 @@ header a {
 
 main {
     padding: 1em;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 38%, rgba(29,53,87,1) 91%); 
+    background-attachment: fixed;
 }
 
 .searches {
@@ -152,6 +155,7 @@ main {
     line-height: 18px;
     margin-bottom: 10px;
     flex-direction:row;
+    background-color: white;
 }
 
 .individual_client a {

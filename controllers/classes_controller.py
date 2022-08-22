@@ -10,3 +10,7 @@ classes_blueprint = Blueprint("classes",__name__)
 def show_all_classes():
     classes = lesson_repo.select_all()
     return render_template("classes/classes.html",classes = classes)
+
+@classes_blueprint.route("/classes", methods = ['POST'])
+def schedule_new_lesson(lesson):
+    pass
