@@ -68,7 +68,16 @@ def update_class(id):
     lesson_time = request.form['lesson_time']
     capacity = request.form['capacity']
     instructor_id = request.form['instructor_id']
-    instructor = instructor_repo.select(instructor_id)
-    lesson = Lesson(activity,duration,lesson_date,lesson_time,instructor,capacity,id)
+    instructor = instructor_repo.select(int(instructor_id))
+    lesson = Lesson(activity,duration,lesson_date,lesson_time,capacity,instructor,id)
     lesson_repo.update(lesson)
     return redirect("/classes")
+
+@classes_blueprint.route('/classes/<id>/delete')
+def delete_confirm(id):
+    return render_template('/classes/delete.html', class_id = id)
+
+@classes_blueprint.route('/classes/<id>/delete', methods = ['POST'])
+def delete_lesson(id):
+    lesson_repo.delete(id)
+    return redirect ("/classes")
