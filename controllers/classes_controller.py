@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 from flask import Flask, render_template, redirect, request
 from flask import Blueprint
 from models.lessons import Lesson
@@ -23,8 +24,18 @@ def schedule_new_lesson():
     instructor_id = request.form['instructor_id']
     instructor = instructor_repo.select(instructor_id)
     lesson = Lesson(activity,duration,lesson_date,lesson_time,instructor,capacity)
-    lesson_repo.add_lesson(lesson)
-    return redirect ("/classes")
+    if 'weekly' not in request.form:
+        lesson_repo.add_lesson(lesson)
+        return redirect ("/classes")
+    else:
+        i=0
+        while i < 52:
+            lesson_repo.add_lesson(lesson)
+            old = datetime.fromisoformat(str(lesson.lesson_date))
+            new = old +timedelta(7)
+            lesson.lesson_date = new
+            i += 1
+        return redirect ("/classes")
 
 @classes_blueprint.route("/classes/new")
 def schedule_lesson_form():

@@ -19,7 +19,9 @@
         {% for instructor in instructor_list %}
         <option value="{{ instructor.id }}">{{ instructor.name }}</option>
         {% endfor %}
-    </select>
+    </select> <br>
+    <label for="weekly">Running every week?:</label>
+    <input type="checkbox" id="weekly" name="weekly"><br>
     <input type="submit">
 
 </form>
