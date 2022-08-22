@@ -2,16 +2,23 @@
 {% block content %}
 
 <h2> Classes</h2>
-
+<div class=client_container>
 {% for lesson in classes %} 
+<div class="client_list">
+    <div class="individual_client">
+
 <a href="/bookings/{{client_id}}/{{lesson.id}}">
-<h4> {{lesson.activity}}</h4>
-<p> {{lesson.lesson_date}} <br>
-    {{lesson.lesson_time}} <br>
-    {{lesson.duration}} <br>
+    <h3> {{lesson.activity}}</h3>
+    <h4>{{lesson.lesson_date}}</h4>
+    <p>
+        {{lesson.lesson_time}} <br>
+        {{lesson.duration}} minutes<br>
     </p>
     </a>
-    <hr>
+    </div>
+    </div>
 {% endfor %} 
 
 {% endblock %} 
+
+

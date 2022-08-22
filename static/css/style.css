@@ -226,10 +226,10 @@ main {
 display: flex;
 justify-content: center;
 width: 100%;
-height: 100%;
 padding-top: 5%;
 letter-spacing: 0.3em;
 font-size: larger;
+line-height: 2.5em;
 }
 
 .form_box{
@@ -237,10 +237,6 @@ font-size: larger;
     border: groove;
     background: white;
     align-items: center;
-font-size:1.4em;
 
 }
 
-.form_box input{
-    font-size:1em
-}
