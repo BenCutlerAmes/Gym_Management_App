@@ -46,3 +46,18 @@ def add_new_client():
 def lesson_booking_form(client_id):
     classes = lesson_repo.select_all()
     return render_template("/classes/class_booking.html",client_id = client_id,classes = classes)
+
+
+@clients_blueprint.route("/clients/<id>/update")
+def client_update_form(id):
+    client = client_repo.select(id)
+    return render_template("/clients/update.html",client = client)
+
+@clients_blueprint.route('/clients/<id>/update', methods =['POST'])
+def update_client(id):
+    name = request.form['name']
+    date_of_birth = request.form['date_of_birth']
+    email_address = request.form['email_address']
+    client = Client(name,date_of_birth,email_address,id)
+    client_repo.update(client)
+    return redirect('/clients')

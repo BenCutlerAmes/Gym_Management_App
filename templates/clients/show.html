@@ -8,9 +8,15 @@
         Email Address: {{client.email_address}}
     </p>
     </div>
-    <div class="subhead_right">
+    <div>
     <a href="classes/{{client.id}}"><button>Make a booking</button></a>
     </div>
+    <div>
+        <a href="{{client.id}}/update"><button>Update details</button></a>
+        </div>
+        <div class=delete_button>
+            <a href="{{client.id}}/delete"><button>Delete client</button></a>
+            </div>
 </div>
 <br><hr><br>
 <div class = bookings>

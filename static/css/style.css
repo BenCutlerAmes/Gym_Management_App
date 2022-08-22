@@ -10,6 +10,9 @@ header {
     padding-left: 1em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    position: sticky;
+    top:0;
+    z-index:999;
 }
 
 header h1 {
@@ -118,10 +121,10 @@ header a {
 
 main {
     padding: 1em;
-    background: rgb(255,255,255);
+    /* background: rgb(255,255,255);
     background: linear-gradient(180deg, rgba(255,255,255,1) 60%, rgba(29,53,87,1) 91%); 
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 .searches {
@@ -173,7 +176,6 @@ main {
 .subheader {
     display: flex;
     gap:3em;
-    align-items: center;
 }
 
 .subheader a button {
@@ -182,4 +184,10 @@ main {
     background-color: #1d3557;
     border-radius: 14px;
     color: white;
+}
+
+.delete_button a button{
+    background-color: red;
+    color: black;
+    font-weight: bold;
 }

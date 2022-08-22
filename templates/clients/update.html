@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update User</h2>
+
+<form action="/clients/{{client.id}}/update" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" value = {{client.name}} name="name"><br>
+    <label for="date_of_birth"> Date of Birth:</label>
+    <input type="date" id="date_of_birth" value = {{client.date_of_birth}} name="date_of_birth"><br>
+    <label for="email_address">Email Address</label>
+    <input type="email" id="email_address" value = {{client.email_address}} name="email_address"><br>
+    <input type="submit">
+</form>
+
+
+{% endblock%}
