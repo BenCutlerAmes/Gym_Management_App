@@ -169,3 +169,17 @@ main {
 .individual_client a h3{
     text-align: left;
 }
+
+.subheader {
+    display: flex;
+    gap:3em;
+    align-items: center;
+}
+
+.subheader a button {
+    height: 5em;
+    width: 12em;
+    background-color: #1d3557;
+    border-radius: 14px;
+    color: white;
+}

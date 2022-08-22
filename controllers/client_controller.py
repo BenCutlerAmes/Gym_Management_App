@@ -40,3 +40,7 @@ def add_new_client():
     client = Client(name, date_of_birth,email_address)
     client_repo.add_client(client)
     return redirect("/clients")
+
+@clients_blueprint.route("/clients/classes/<id>")
+def lesson_booking_form(id):
+    return render_template("/clients/booking_form.html")

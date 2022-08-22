@@ -12,7 +12,7 @@ def add_lesson(lesson):
 
 def select_all():
     lesson_list = []
-    sql = "SELECT * FROM lessons ORDER BY lesson_date, lesson_time;"
+    sql = "SELECT * FROM lessons WHERE lesson_date > now() and lesson_date < now() + interval '2 weeks' ORDER BY lesson_date, lesson_time ;"
     results = run_sql(sql)
     for result in results:
         lesson = Lesson(result['activity'], result['duration'], result['lesson_date'], result['lesson_time'], result['instructor_id'],result['capacity'],result['id'])

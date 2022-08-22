@@ -2,12 +2,18 @@
 {% block content %}
 
 <div class=subheader>
+    <div class=subhead_left>
     <h2>{{client.name}}</h2>
     <p>Date of Birth: {{client.date_of_birth}} <br>
         Email Address: {{client.email_address}}
     </p>
-</div>
+    </div>
+    <div class="subhead_right">
+    <a href="classes/{{client.id}}"><button>Make a booking</button></a>
 
+    </div>
+</div>
+<br><hr><br>
 <div class = bookings>
     <h3>Current bookings</h3>
     <div class="individual_booking">
