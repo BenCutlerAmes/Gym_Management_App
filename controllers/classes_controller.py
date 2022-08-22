@@ -6,6 +6,7 @@ from models.instructors import Instructor
 import repositories.lesson_repository as lesson_repo
 import repositories.lesson_booking_repository as lesson_booking_repo
 import repositories.instructor_repository as instructor_repo
+import repositories.client_repository as client_repo
 
 classes_blueprint = Blueprint("classes",__name__)
 
@@ -47,3 +48,8 @@ def show_one_lesson(id):
     lesson = lesson_repo.select(id)
     clients =lesson_repo.booked_clients(lesson)
     return render_template('/classes/show.html', lesson = lesson, clients = clients)
+
+@classes_blueprint.route('/classes/<id>/clients')
+def lesson_booking_form(id):
+    clients = client_repo.select_all()
+    return render_template('clients/class_booking.html',clients = clients, lesson_id=id)
