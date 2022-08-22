@@ -53,3 +53,22 @@ def show_one_lesson(id):
 def lesson_booking_form(id):
     clients = client_repo.select_all()
     return render_template('clients/class_booking.html',clients = clients, lesson_id=id)
+
+@classes_blueprint.route('/classes/<id>/update')
+def class_update_form(id):
+    lesson = lesson_repo.select(id)
+    instructor_list = instructor_repo.select_all()
+    return render_template('/classes/update.html',lesson = lesson, instructor_list = instructor_list)
+
+@classes_blueprint.route('/classes/<id>/update', methods=['POST'])
+def update_class(id):
+    activity = request.form['activity']
+    duration = request.form['duration']
+    lesson_date = request.form['lesson_date']
+    lesson_time = request.form['lesson_time']
+    capacity = request.form['capacity']
+    instructor_id = request.form['instructor_id']
+    instructor = instructor_repo.select(instructor_id)
+    lesson = Lesson(activity,duration,lesson_date,lesson_time,instructor,capacity,id)
+    lesson_repo.update(lesson)
+    return redirect("/classes")

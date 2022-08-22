@@ -20,19 +20,14 @@ lesson_repo.delete_all()
 
 client1 = Client("Kyle Van Der Merwe","1993-09-14","kyleiscool@gmail.com")
 client_repo.add_client(client1)
-
 client2 = Client("Josh Marks","1992-05-24","joshhatestrees@aol.com")
 client_repo.add_client(client2)
-
 client3 = Client( "Millie Chapman","1989-12-09","themills@hotmail.com")
 client_repo.add_client(client3)
-
 client4 = Client( "Beverley","1956-02-01","badbev@gmail.com")
 client_repo.add_client(client4)
-
 client1=Client("Aldis Vicioso","1983-1-12","avicioso3@psu.edu")
 client_repo.add_client(client1)
-
 client1=Client("Aldis Vicioso","1983-1-12","avicioso3@psu.edu")
 client_repo.add_client(client1)
 client1=Client("Lewiss Scibsey","1990-2-28","lscibsey4@forbes.com")
@@ -137,7 +132,7 @@ instructor3 = Instructor("John","john@thefitnessfactory.com")
 instructor_repo.add_instructor(instructor3)
 instructor4 = Instructor("Stuart","stuart@thefitnessfactory.com")
 instructor_repo.add_instructor(instructor4)
-instructor5 = Instructor("eric","eric@thefitnessfactory.com")
+instructor5 = Instructor("Eric","eric@thefitnessfactory.com")
 instructor_repo.add_instructor(instructor5)
 
 lesson1 = Lesson("Zumba",60,"2022-08-27","13:00",instructor1,20)

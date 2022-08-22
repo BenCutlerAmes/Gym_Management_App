@@ -42,7 +42,7 @@ def delete(id):
 
 def update(lesson):
     sql = "UPDATE lessons SET (activity, duration, lesson_date, lesson_time, instructor) = (%s,%s,%s,%s,%s) WHERE id = %s"
-    values = [lesson.activity, lesson.duration, lesson.lesson_date, lesson.lesson_time, lesson.instructor_id,lesson.capacity,lesson.id]
+    values = [lesson.activity, lesson.duration, lesson.lesson_date, lesson.lesson_time, lesson.instructor,lesson.capacity,lesson.id]
     run_sql(sql, values)
 
 def booked_clients(lesson):
