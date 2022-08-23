@@ -54,7 +54,6 @@ def find_booking_id(client_id,lesson_id):
     values = [client_id,lesson_id]
     result = run_sql(sql,values)
     result = result[0]['id']
-    print (result)
     return result
 
 def count_class_bookings(id):
