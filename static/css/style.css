@@ -83,7 +83,7 @@ header a {
     color: white;
     width: 0;
     overflow: hidden;
-    transition: 1s;
+    transition: 0.5s;
     border-right: 8px solid white;
 
 }
