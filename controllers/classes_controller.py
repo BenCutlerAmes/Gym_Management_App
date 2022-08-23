@@ -82,3 +82,4 @@ def delete_confirm(id):
 def delete_lesson(id):
     lesson_repo.delete(id)
     return redirect ("/classes")
+
