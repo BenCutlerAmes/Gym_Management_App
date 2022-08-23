@@ -10,7 +10,7 @@
         {{lesson.lesson_date}} @ {{lesson.lesson_time}}
     </p>
     <form action="/bookings" , method=post>
-        <input type="submit">
+        <input id=confirmation_button type="submit">
         <input type="hidden" name='client_id' value="{{client.id}}">
         <input type="hidden" name='lesson_id' value="{{lesson.id}}">
     </form>

@@ -47,3 +47,10 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
+def find_booking_id(client_id,lesson_id):
+    sql = "SELECT id WHERE client_id = %s AND lesson_id = %s"
+    values = [client_id,lesson_id]
+    result = run_sql(sql,values)
+    return result
+
+

@@ -2,6 +2,7 @@ from db.run_sql import run_sql
 from models.lessons import Lesson
 from models.client import Client
 from models.instructors import Instructor
+import datetime
 
 def add_lesson(lesson):
     sql = "INSERT INTO lessons (activity, duration, lesson_date, lesson_time, instructor_id, capacity) VALUES (%s,%s,%s,%s,%s,%s) RETURNING id"
@@ -15,7 +16,9 @@ def select_all():
     sql = "SELECT * FROM lessons WHERE lesson_date > now() and lesson_date < now() + interval '2 weeks' ORDER BY lesson_date, lesson_time ;"
     results = run_sql(sql)
     for result in results:
-        lesson = Lesson(result['activity'], result['duration'], result['lesson_date'], result['lesson_time'], result['instructor_id'],result['capacity'],result['id'])
+        date = datetime.datetime.fromisoformat(str(result['lesson_date']))
+        date = datetime.datetime.strftime(date,'%d %b')
+        lesson = Lesson(result['activity'], result['duration'], date, result['lesson_time'], result['instructor_id'],result['capacity'],result['id'])
         lesson_list.append(lesson)
     return lesson_list
 

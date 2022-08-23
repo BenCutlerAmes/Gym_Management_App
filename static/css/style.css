@@ -56,7 +56,7 @@ header a {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding-bottom: 400px;
+    padding-bottom:10%;
 
 
 }
@@ -247,5 +247,14 @@ line-height: 2.5em;
     background: white;
     align-items: center;
 
+}
+
+#confirmation_button {
+    background-color: lightgreen;
+    color: black;
+    font-weight: bold;
+    height: 5em;
+    width: 12em;
+    border-radius: 14px;
 }
 

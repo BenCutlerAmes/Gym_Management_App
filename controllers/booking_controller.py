@@ -1,4 +1,3 @@
-from http import client
 from flask import Flask, render_template, redirect, request
 from flask import Blueprint
 import repositories.lesson_booking_repository as booking_repo
@@ -26,3 +25,13 @@ def create_booking():
     booking = Lesson_Booking(client,lesson)
     booking_repo.add_booking(booking)
     return redirect("/clients")
+
+@booking_blueprint.route("/bookings/<client_id>/<lesson_id>/delete")
+def confirm_booking_delete(client_id,lesson_id):
+    return render_template("bookings/delete.html",client_id = client_id, lesson_id = lesson_id)
+
+@booking_blueprint.route("/bookings/<client_id>/<lesson_id>/delete", methods = ['POST'])
+def delete_booking(client_id,lesson_id):
+    result = booking_repo.find_booking_id(client_id,lesson_id)
+    booking_repo.delete(result)
+    return  redirect("/clients")  

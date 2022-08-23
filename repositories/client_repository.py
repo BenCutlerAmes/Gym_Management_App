@@ -2,6 +2,7 @@ from db.run_sql import run_sql
 from models.client import Client
 from models.lessons import Lesson
 import repositories.instructor_repository as instructor_repo
+import datetime
 
 def add_client(client):
     sql = "INSERT INTO clients (name,date_of_birth,email_address) VALUES (%s,%s,%s) RETURNING id"
@@ -56,7 +57,9 @@ def booked_lessons(client):
     results = run_sql(sql,values)
     for row in results:
         instructor = instructor_repo.select(row['instructor_id'])
-        lesson = Lesson(row['activity'],row['duration'],row['lesson_date'],row['lesson_time'],instructor,row['capacity'],row['id'])
+        date = datetime.datetime.fromisoformat(str(row['lesson_date']))
+        date = datetime.datetime.strftime(date,'%d %b')
+        lesson = Lesson(row['activity'],row['duration'],date,row['lesson_time'],instructor,row['capacity'],row['id'])
         lessons.append(lesson)
     return lessons
 
