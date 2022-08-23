@@ -47,7 +47,8 @@ def schedule_lesson_form():
 def show_one_lesson(id):
     lesson = lesson_repo.select(id)
     clients =lesson_repo.booked_clients(lesson)
-    return render_template('/classes/show.html', lesson = lesson, clients = clients)
+    spaces = lesson.capacity - lesson_booking_repo.count_class_bookings(id)
+    return render_template('/classes/show.html', lesson = lesson, clients = clients,spaces=spaces)
 
 @classes_blueprint.route('/classes/<id>/clients')
 def lesson_booking_form(id):

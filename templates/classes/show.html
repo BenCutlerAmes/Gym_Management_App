@@ -7,10 +7,12 @@
         <p>Date: {{lesson.lesson_date}} <br>
             Time: {{lesson.lesson_time}}
         </p>
-    </div>
+    </div> 
+    {% if spaces>0 %}
     <div class="subhead_right">
         <a href="/classes/{{lesson.id}}/clients"><button>Book this class</button></a>
     </div>
+    {% endif %}
     <div>
         <a href="{{lesson.id}}/update"><button>Update details</button></a>
     </div>
