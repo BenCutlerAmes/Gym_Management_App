@@ -37,6 +37,7 @@ def select_id(id):
         lesson = lesson_repo.select(result['lesson_id'])
         lesson_booking = Lesson_Booking(client,lesson,result['id'])
     return lesson_booking
+
         
 def delete_all():
     sql = "DELETE FROM lesson_bookings"
@@ -56,4 +57,9 @@ def find_booking_id(client_id,lesson_id):
     print (result)
     return result
 
-
+def count_class_bookings(id):
+    sql = "SELECT COUNT(*) FROM lesson_bookings where lesson_id = %s"
+    values = [id]
+    results = run_sql(sql,values)
+    result = results[0]['count']
+    return result
