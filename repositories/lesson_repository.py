@@ -3,6 +3,7 @@ from models.lessons import Lesson
 from models.client import Client
 from models.instructors import Instructor
 import repositories.lesson_booking_repository as lesson_booking_repo
+import repositories.instructor_repository as instructor_repo
 import datetime
 
 def add_lesson(lesson):
@@ -20,7 +21,8 @@ def select_all():
         date = datetime.datetime.fromisoformat(str(result['lesson_date']))
         date = datetime.datetime.strftime(date,'%d %b')
         spaces = result['capacity'] - lesson_booking_repo.count_class_bookings(result['id'])
-        lesson = Lesson(result['activity'], result['duration'], date, result['lesson_time'], result['instructor_id'],spaces,result['id'])
+        instructor = instructor_repo.select(result['instructor_id'])
+        lesson = Lesson(result['activity'], result['duration'], date, result['lesson_time'], instructor,spaces,result['id'])
         lesson_list.append(lesson)
     return lesson_list
 

@@ -17,7 +17,7 @@
         <label for="capacity">Capacity</label>
         <input type="number" id="capacity" value={{lesson.capacity}} name="capacity"><br>
         <label for="instructor">Instructor:</label>
-        <select id="instructor" value = {{lesson.instructor_id}} name="instructor_id">
+        <select id="instructor"  name="instructor_id">
             {% for instructor in instructor_list %}
             <option value="{{ instructor.id }}">{{ instructor.name }}</option>
             {% endfor %}
