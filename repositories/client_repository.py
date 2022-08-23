@@ -62,6 +62,7 @@ def booked_lessons(client):
         lesson = Lesson(row['activity'],row['duration'],date,row['lesson_time'],instructor,row['capacity'],row['id'])
         lessons.append(lesson)
     return lessons
+    
 
 def search_by_name(name):
     client_list = []

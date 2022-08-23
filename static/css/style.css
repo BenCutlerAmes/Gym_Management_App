@@ -258,3 +258,9 @@ line-height: 2.5em;
     border-radius: 14px;
 }
 
+.no_capacity {
+    background-image: url(/static/images/fully_booked.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}

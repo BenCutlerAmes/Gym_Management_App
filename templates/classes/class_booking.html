@@ -4,6 +4,8 @@
 <h2> Classes</h2>
 <div class=client_container>
 {% for lesson in classes %} 
+
+{% if lesson.capacity>0 %}
 <div class="client_list">
     <div class="individual_client">
 
@@ -13,10 +15,30 @@
     <p>
         {{lesson.lesson_time}} <br>
         {{lesson.duration}} minutes<br>
+        {{lesson.capacity}} spaces remaining
     </p>
     </a>
     </div>
     </div>
+
+{% else %} 
+<div class="client_list">
+    <div class="individual_client no_capacity">
+
+    <h3> {{lesson.activity}} with {{lesson.instructor.name}}</h3>
+    <h4>{{lesson.lesson_date}}</h4>
+    <p>
+        {{lesson.lesson_time}} <br>
+        {{lesson.duration}} minutes<br>
+        {{lesson.capacity}} spaces remaining
+    </p>
+    
+    </div>
+    </div>
+
+{% endif %}
+
+
 {% endfor %} 
 
 {% endblock %} 
