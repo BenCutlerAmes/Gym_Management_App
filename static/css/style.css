@@ -204,6 +204,21 @@ main {
     color: white;
 }
 
+.delete_button_box {
+    display: flex;
+    justify-items: right;
+}
+
+.delete_button_box a button{
+    background-color: red;
+    color: black;
+    font-weight: bold;
+    height: 3em;
+    width: 8em;
+    border-radius: 14px;
+    
+}
+
 .delete_button a button{
     background-color: red;
     color: black;
@@ -211,7 +226,8 @@ main {
     height: 5em;
     width: 12em;
     border-radius: 14px;
-}
+    
+    }
 
 .delete_client_button{
     background-color: red;
@@ -263,4 +279,8 @@ line-height: 2.5em;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right;
+}
+
+.no_capacity a {
+    text-align: left;
 }

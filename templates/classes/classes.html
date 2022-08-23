@@ -4,7 +4,7 @@
 <h2> Classes</h2>
 <div class=client_container>
     {% for lesson in classes %}
-    {% if lesson.capacity>0  %} 
+    {% if lesson.capacity>0 %}
     <div class="client_list">
         <div class="individual_client">
             <a href="/classes/{{lesson.id}}">
@@ -18,16 +18,16 @@
             </a>
         </div>
     </div>
-    {% else %} 
+    {% else %}
     <div class="client_list">
         <div class="individual_client no_capacity">
+            <a href="/classes/{{lesson.id}}">
                 <h3> {{lesson.activity}} with {{lesson.instructor.name}}</h3>
                 <h4>{{lesson.lesson_date}}</h4>
                 <p>
-                    {{lesson.lesson_time}} <br>
-                    {{lesson.duration}} minutes<br>
-                    {{lesson.capacity}} spaces remaining
+                   <br><br><br>
                 </p>
+                </a>
         </div>
     </div>
     {% endif %}
