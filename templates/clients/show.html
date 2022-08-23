@@ -35,7 +35,9 @@
             {{lesson.lesson_time}} <br>
             {{lesson.duration}} minutes
         </p>
-        <hr>
+        <div class = delete_button>
+            <a  href="/bookings/{{client.id}}/{{lesson.id}}/delete"><button class = delete_button>Delete Booking</button></a>
+        </div>
         {% endfor %}
     </div>
 

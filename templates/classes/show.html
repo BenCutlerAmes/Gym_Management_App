@@ -26,8 +26,10 @@
         {% for client in clients %} 
          <h4>{{client.name}}</h4>
          <p> {{client.date_of_birth}}
-        <a href="/bookings/{{client.id}}/{{lesson.id}}/delete">link test</a>
-        </p><hr>
+        </p>
+        <div class = delete_button>
+            <a  href="/bookings/{{client.id}}/{{lesson.id}}/delete"><button class = delete_button>Delete Booking</button></a>
+        </div>
         {% endfor %}
     </div>
 

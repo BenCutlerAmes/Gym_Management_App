@@ -11,8 +11,9 @@ def add_booking(booking):
     sql = "INSERT INTO lesson_bookings (client_id, lesson_id) VALUES (%s,%s) RETURNING id"
     values = [booking.client.id, booking.lesson.id]
     results = run_sql(sql,values)
-    id = results[0]['id']
-    booking.id = id
+    if results != []:
+        id = results[0]['id']
+        booking.id = id
 
 def select_all():
     lesson_bookings =[]
@@ -48,9 +49,11 @@ def delete(id):
     run_sql(sql, values)
 
 def find_booking_id(client_id,lesson_id):
-    sql = "SELECT id WHERE client_id = %s AND lesson_id = %s"
+    sql = "SELECT id FROM lesson_bookings WHERE client_id = %s AND lesson_id = %s"
     values = [client_id,lesson_id]
     result = run_sql(sql,values)
+    result = result[0]['id']
+    print (result)
     return result
 
 
