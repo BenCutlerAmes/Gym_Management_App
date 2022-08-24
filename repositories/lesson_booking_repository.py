@@ -14,6 +14,7 @@ def add_booking(booking):
     if results != []:
         id = results[0]['id']
         booking.id = id
+        
 
 def select_all():
     lesson_bookings =[]
