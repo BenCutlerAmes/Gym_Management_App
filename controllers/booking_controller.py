@@ -24,7 +24,7 @@ def create_booking():
     lesson = lesson_repo.select(lesson_id)
     booking = Lesson_Booking(client,lesson)
     booking_repo.add_booking(booking)
-    return render_template("/bookings/booking_confirmation.html")
+    return redirect("/clients")
 
 @booking_blueprint.route("/bookings/<client_id>/<lesson_id>/delete")
 def confirm_booking_delete(client_id,lesson_id):
