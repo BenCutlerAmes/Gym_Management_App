@@ -145,7 +145,7 @@ while i < 52:
     i+=1
         
 
-lesson1 = Lesson("Bodypump",60,"2022-08-28","14:00", instructor1,20)
+lesson1 = Lesson("Bodypump",60,"2022-08-28","14:00", instructor1,1)
 i=0
 while i < 52:
     lesson_repo.add_lesson(lesson1)
@@ -154,7 +154,7 @@ while i < 52:
     lesson1.lesson_date = new
     i+=1
 
-lesson1 = Lesson("GetSwolFast",60,"2022-08-28","13:00",instructor3,10)
+lesson1 = Lesson("Legs Bums & Tums",30,"2022-08-24","11:00",instructor3,10)
 i=0
 while i < 52:
     lesson_repo.add_lesson(lesson1)
@@ -163,7 +163,7 @@ while i < 52:
     lesson1.lesson_date = new
     i+=1
 
-lesson1 = Lesson("Swimming",60,"2022-08-28","13:00",instructor5,10)
+lesson1 = Lesson("Swimming",90,"2022-08-28","16:00",instructor5,10)
 i=0
 while i < 52:
     lesson_repo.add_lesson(lesson1)
@@ -172,7 +172,7 @@ while i < 52:
     lesson1.lesson_date = new
     i+=1
 
-lesson1 = Lesson("Cage Fighting",60,"2022-08-28","13:00",instructor4,4)
+lesson1 = Lesson("Cage Fighting",15,"2022-08-26","09:00",instructor4,4)
 i=0
 while i < 52:
     lesson_repo.add_lesson(lesson1)
@@ -190,6 +190,14 @@ while i < 52:
     lesson1.lesson_date = new
     i+=1
 
+lesson1 = Lesson("AquaFit",60,"2022-08-23","05:30",instructor5,10)
+i=0
+while i < 52:
+    lesson_repo.add_lesson(lesson1)
+    old = datetime.fromisoformat(str(lesson1.lesson_date))
+    new = old + timedelta(7)
+    lesson1.lesson_date = new
+    i+=1
 
 
 
