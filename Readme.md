@@ -30,6 +30,11 @@ It was a solo project making a full-stack application and represents 6 days of w
  ```
  python3 console.py
  ```
+ ## Screenshots
+ ![image](https://user-images.githubusercontent.com/93072051/194393666-a4e00028-bf17-4eea-82e4-c7de48043678.png)
+<img width="1373" alt="Screenshot 2022-09-12 at 22 44 26" src="https://user-images.githubusercontent.com/93072051/194393690-7370d076-9506-492b-9940-9834d6ff0d7e.png">
+<img width="1371" alt="Screenshot 2022-09-12 at 22 44 42" src="https://user-images.githubusercontent.com/93072051/194393705-e37cf413-02a4-4687-a37e-78a52e1350f1.png">
+
 
 
 
