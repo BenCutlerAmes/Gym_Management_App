@@ -2,7 +2,7 @@
 
 This project represents the end of 4 weeks of study at CodeClan.
 
-It was a solo project making a full-stack application.
+It was a solo project making a full-stack application and represents 6 days of work.
 
 ## Given MVP
 
